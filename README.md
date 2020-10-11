@@ -5,15 +5,16 @@ Hangman
 Instructions to this assignment can be found [here](#).
 
 ## Checklist:
-- [ ] update the assignment checks above to the correct link.
+- [X] update the assignment checks above to the correct link.
 - [ ] make sure the assignment checks pass
-- [ ] fill out the self evaluation and Reflection
-- [ ] submit the repository link on Canvas
+- [X] fill out the self evaluation and Reflection
+- [X] submit the repository link on Canvas
 
 ## Self-Evaluation:
 
-how many points out of 20 do you deserve on this assignment:
+how many points out of 20 do you deserve on this assignment: 15
 
 ## Self-Reflection:
-
+I was a little confused about some of the direction.  I had an error soon as I install the dependecies. 
 ### How long it took me to finish this?
+5 hours

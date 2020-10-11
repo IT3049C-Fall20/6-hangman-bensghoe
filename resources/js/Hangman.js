@@ -32,11 +32,18 @@ class Hangman {
    */
   start(difficulty, next) {
     // get word and set it to the class's this.word
+    var guessedWord = this.word;
+    guessedWord = guessedWord [Math.floor(math.random()* this.guessedWord.length)];
     // clear canvas
+   this.clearCanvas();
     // draw base
+    this.drawBase();
     // reset this.guesses to empty array
+    this.guesses = [];
     // reset this.isOver to false
+    this.isOver = false;
     // reset this.didWin to false
+    this.didWin = false;
   }
 
   /**
@@ -45,19 +52,60 @@ class Hangman {
    */
   guess(letter) {
     // Check if nothing was provided and throw an error if so
+    if(letter === null){
+      console.Error ("Please enter a letter");
+    }
+
     // Check for invalid cases (numbers, symbols, ...) throw an error if it is
+      if(letter.length !== 1 && letter.match(/[a-z]/i)){
+        console.error ("Make sure you entered a letter");
+      }
+      
     // Check if more than one letter was provided. throw an error if it is.
+    if(letter.length !== 1){
+      console.error("Please enter one letter");
+    }
+
     // if it's a letter, convert it to lower case for consistency.
+    if(letter.length !== 1 && letter.match(/[a-z]/i)){
+      return letter.toLowerCase();
+    }
     // check if this.guesses includes the letter. Throw an error if it has been guessed already.
+    
     // add the new letter to the guesses array.
+    for (var i = 0; i < word.length; i++) {
+      this.guesses[i] = "_";
+    }
     // check if the word includes the guessed letter:
     //    if it's is call checkWin()
+    if (guessed === guessedWord){
+      return this.checkWin();
+    }
+
     //    if it's not call onWrongGuess()
+    if (guessed ==! guessedWord){
+      return this.onWrongGuess();
+    }
   }
 
   checkWin() {
     // using the word and the guesses array, figure out how many remaining unknowns.
     // if zero, set both didWin, and isOver to true
+
+    var ShowpalyerProgress = function (guesses){};
+
+    while (word.length > 0) {
+      var showPlayerProgress = function (guesses){};
+      showPlayerProgress(guesses);
+      if (this.guesses === null) {
+      break;
+      } else if (guess.length !== 1) {
+      alert("Please enter a single letter.");
+      } else {
+      var updateGame = function (word, guesses) {};
+      word.length -= updateGame( word, guesses);;
+      }
+      }
   }
 
   /**
@@ -65,15 +113,41 @@ class Hangman {
    * drawHead, drawBody, drawRightArm, drawLeftArm, drawRightLeg, or drawLeftLeg.
    * if the number wrong guesses is 6, then also set isOver to true and didWin to false.
    */
-  onWrongGuess() {}
+  onWrongGuess(guessed) {
+   if (this.guessed === 0) {
+    return this.drawHead();
+   }
+   if (this.guessed === 1) {
+    return this.drawBody();
+   }
+
+   if (this.guessed === 2) {
+    return this.drawLeftArm();
+   }
+
+   if (this.guessed === 3) {
+    return this.drawRightArm();
+   }
+
+   if (this.guessed === 4) {
+    return this.drawLeftLeg();
+   }
+   if (this.guessed === 5) {
+    return this.drawRightLeg();
+   }
+  
+  }
 
   /**
    * This function will return a string of the word placeholder
    * It will have underscores in the correct number and places of the unguessed letters.
    * i.e.: if the word is BOOK, and the letter O has been guessed, this would return _ O O _
    */
-  getWordHolderText() {
-    return;
+  getWordHolderText(word,guessed) {
+    for (var i = 0; i < word.length; i++) {
+    guessed[i] = "_";
+    }
+    return guessed;
   }
 
   /**
@@ -82,7 +156,8 @@ class Hangman {
    * (Guesses: A, B, C)
    * Hint: use the Array.prototype.join method.
    */
-  getGuessesText() {
+  getGuessesText(guesses) {
+    guesses.Array.prototype.join('')
     return ``;
   }
 
